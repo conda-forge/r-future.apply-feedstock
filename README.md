@@ -7,21 +7,23 @@ Package license: LGPL (>= 2.1)
 
 Feedstock license: BSD 3-Clause
 
-Summary: Implementations of apply(), lapply(), sapply() and friends that can be resolved using any future-supported backend, e.g. parallel on the local machine or distributed on a compute cluster.  These future_*apply() functions comes with the same pros and cons as the corresponding base-R *apply() functions but with the additional feature of being able to be processed via the future framework.
+Summary: Implementations of apply(), lapply(), sapply() and friends that can be resolved using any future-supported backend, e.g. parallel on the local machine or distributed on a compute cluster. These future_*apply() functions comes with the same pros and cons as the corresponding base-R *apply() functions but with the additional feature of being able to be processed via the future framework.
 
 
 
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/r-future.apply-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/r-future.apply-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/r-future.apply-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/r-future.apply-feedstock)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/r-future.apply-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/r-future-apply-feedstock/branch/master)
+[![Linux](https://img.shields.io/circleci/project/github/conda-forge/r-future.apply-feedstock/master.svg?label=Linux)](https://circleci.com/gh/conda-forge/r-future.apply-feedstock)
+[![OSX](https://img.shields.io/travis/conda-forge/r-future.apply-feedstock/master.svg?label=macOS)](https://travis-ci.org/conda-forge/r-future.apply-feedstock)
+[![Windows](https://img.shields.io/appveyor/ci/conda-forge/r-future.apply-feedstock/master.svg?label=Windows)](https://ci.appveyor.com/project/conda-forge/r-future-apply-feedstock/branch/master)
 
 Current release info
 ====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/r-future.apply/badges/version.svg)](https://anaconda.org/conda-forge/r-future.apply)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/r-future.apply/badges/downloads.svg)](https://anaconda.org/conda-forge/r-future.apply)
+
+| Name | Downloads | Version | Platforms |
+| --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-r--future.apply-green.svg)](https://anaconda.org/conda-forge/r-future.apply) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/r-future.apply.svg)](https://anaconda.org/conda-forge/r-future.apply) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/r-future.apply.svg)](https://anaconda.org/conda-forge/r-future.apply) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/r-future.apply.svg)](https://anaconda.org/conda-forge/r-future.apply) |
 
 Installing r-future.apply
 =========================
