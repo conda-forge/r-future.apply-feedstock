@@ -1,5 +1,4 @@
-{% set version = "1.0.0" %}
-
+{% set version = '1.0.1' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +9,12 @@ package:
 source:
   fn: future.apply_{{ version }}.tar.gz
   url:
-    - https://cran.r-project.org/src/contrib/future.apply_{{ version }}.tar.gz
-    - https://cran.r-project.org/src/contrib/Archive/future.apply/future.apply_{{ version }}.tar.gz
-  sha256: 5de4133dc449e113ed2e054352c96520b8ebf94d373f226039aac10250bd37ca
+    - {{ cran_mirror }}/src/contrib/future.apply_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/Archive/future.apply/future.apply_{{ version }}.tar.gz
+  sha256: f4a8c2b78df97a3bba72a867dd76837f08af032e93824730ec6571eed3beaac4
 
 build:
+  merge_build_host: True  # [win]
   number: 0
   skip: true  # [win32]
   rpaths:
@@ -23,34 +23,39 @@ build:
 
 requirements:
   build:
+    - {{posix}}zip               # [win]
+  host:
     - r-base
-    - r-future >=1.6.2
-    - r-globals >=0.10.3
-
+    - r-future >=1.9.0
+    - r-globals >=0.12.1
   run:
     - r-base
-    - r-future >=1.6.2
-    - r-globals >=0.10.3
+    - r-future >=1.9.0
+    - r-globals >=0.12.1
 
 test:
   commands:
-    - $R -e "library('future.apply')"  # [not win]
+    - $R -e "library('future.apply')"           # [not win]
     - "\"%R%\" -e \"library('future.apply')\""  # [win]
 
 about:
   home: https://github.com/HenrikBengtsson/future.apply
-  license: LGPL (>= 2.1)
-  summary: Implementations of apply(), lapply(), sapply() and friends that can be resolved using
-    any future-supported backend, e.g. parallel on the local machine or distributed
-    on a compute cluster. These future_*apply() functions comes with the same pros
-    and cons as the corresponding base-R *apply() functions but with the additional
-    feature of being able to be processed via the future framework.
-  license_family: LGPL
+  license: GPL (>= 2)
+  summary: Implementations of apply(), eapply(), lapply(), Map(), mapply(), replicate(), sapply(),
+    tapply(), and vapply() that can be resolved using any future-supported backend,
+    e.g. parallel on the local machine or distributed on a compute cluster.  These future_*apply()
+    functions come with the same pros and cons as the corresponding base-R *apply()
+    functions but with the additional feature of being able to be processed via the
+    future framework.
+  license_family: GPL3
+  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'  # [unix]
+  license_file: '{{ environ["PREFIX"] }}\R\share\licenses\GPL-3'  # [win]
 
 extra:
   recipe-maintainers:
-    - cbrueffer
     - johanneskoester
     - bgruening
     - daler
     - jdblischak
+    - cbrueffer
+    - dbast
