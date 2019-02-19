@@ -1,4 +1,4 @@
-{% set version = "1.1.0" %}
+{% set version = '1.1.0' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -7,16 +7,15 @@ package:
   version: {{ version|replace("-", "_") }}
 
 source:
-  fn: future.apply_{{ version }}.tar.gz
   url:
     - {{ cran_mirror }}/src/contrib/future.apply_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/future.apply/future.apply_{{ version }}.tar.gz
   sha256: 80b509c810b8caab2d7e90c9cf1a772875180ebf6abed5bc1ee15bbb7b4edb2c
 
 build:
-  noarch: generic
   merge_build_host: True  # [win]
   number: 0
+  noarch: generic
   rpaths:
     - lib/R/lib/
     - lib/
@@ -26,12 +25,12 @@ requirements:
     - {{posix}}zip               # [win]
   host:
     - r-base
-    - r-future >=1.9.0
-    - r-globals >=0.12.1
+    - r-future >=1.10.0
+    - r-globals >=0.12.4
   run:
     - r-base
-    - r-future >=1.9.0
-    - r-globals >=0.12.1
+    - r-future >=1.10.0
+    - r-globals >=0.12.4
 
 test:
   commands:
@@ -48,13 +47,29 @@ about:
     functions but with the additional feature of being able to be processed via the
     future framework.
   license_family: GPL3
-  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'
+  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
 
 extra:
   recipe-maintainers:
-    - johanneskoester
-    - bgruening
-    - daler
-    - jdblischak
-    - cbrueffer
-    - dbast
+    - conda-forge/r
+
+# Package: future.apply
+# Version: 1.1.0
+# Title: Apply Function to Elements in Parallel using Futures
+# Depends: R (>= 3.2.0), future (>= 1.10.0)
+# Imports: globals (>= 0.12.4)
+# Suggests: datasets, stats, tools, listenv (>= 0.7.0), R.rsp, markdown
+# VignetteBuilder: R.rsp
+# Authors@R: c(person("Henrik", "Bengtsson", role=c("aut", "cre", "cph"), email = "henrikb@braju.com"), person("R Core Team", role = c("cph", "ctb")))
+# Description: Implementations of apply(), eapply(), lapply(), Map(), mapply(), replicate(), sapply(), tapply(), and vapply() that can be resolved using any future-supported backend, e.g. parallel on the local machine or distributed on a compute cluster.  These future_*apply() functions come with the same pros and cons as the corresponding base-R *apply() functions but with the additional feature of being able to be processed via the future framework.
+# License: GPL (>= 2)
+# LazyLoad: TRUE
+# URL: https://github.com/HenrikBengtsson/future.apply
+# BugReports: https://github.com/HenrikBengtsson/future.apply/issues
+# RoxygenNote: 6.1.1
+# NeedsCompilation: no
+# Packaged: 2019-01-17 03:43:24 UTC; hb
+# Author: Henrik Bengtsson [aut, cre, cph], R Core Team [cph, ctb]
+# Maintainer: Henrik Bengtsson <henrikb@braju.com>
+# Repository: CRAN
+# Date/Publication: 2019-01-17 05:40:03 UTC
