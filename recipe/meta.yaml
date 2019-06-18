@@ -25,11 +25,11 @@ requirements:
     - {{posix}}zip               # [win]
   host:
     - r-base
-    - r-future >=1.10.0
+    - r-future >=1.13.0
     - r-globals >=0.12.4
   run:
     - r-base
-    - r-future >=1.10.0
+    - r-future >=1.13.0
     - r-globals >=0.12.4
 
 test:
