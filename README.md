@@ -5,11 +5,9 @@ Home: https://github.com/HenrikBengtsson/future.apply
 
 Package license: GPL (>= 2)
 
-Feedstock license: BSD 3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-future.apply-feedstock/blob/master/LICENSE.txt)
 
 Summary: Implementations of apply(), eapply(), lapply(), Map(), mapply(), replicate(), sapply(), tapply(), and vapply() that can be resolved using any future-supported backend, e.g. parallel on the local machine or distributed on a compute cluster.  These future_*apply() functions come with the same pros and cons as the corresponding base-R *apply() functions but with the additional feature of being able to be processed via the future framework.
-
-
 
 Current build status
 ====================
