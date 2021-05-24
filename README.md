@@ -3,7 +3,7 @@ About r-future.apply
 
 Home: https://github.com/HenrikBengtsson/future.apply
 
-Package license: GPL (>= 2)
+Package license: GPL-2.0-or-later
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-future.apply-feedstock/blob/master/LICENSE.txt)
 
