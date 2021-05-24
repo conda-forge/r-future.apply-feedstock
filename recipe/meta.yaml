@@ -39,11 +39,12 @@ test:
 
 about:
   home: https://github.com/HenrikBengtsson/future.apply
-  license: GPL (>= 2)
+  license: GPL-2.0-or-later
   summary: Implementations of apply(), eapply(), lapply(), Map(), mapply(), replicate(), sapply(), tapply(), and vapply() that can be resolved using any future-supported backend, e.g. parallel on the local machine or distributed on a compute cluster.  These future_*apply() functions come with the same pros and cons as the
     corresponding base-R *apply() functions but with the additional feature of being able to be processed via the future framework.
   license_family: GPL3
-  license_file: {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
+  license_file:
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
 
 extra:
   recipe-maintainers:
