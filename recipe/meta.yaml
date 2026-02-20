@@ -1,4 +1,4 @@
-{% set version = "1.20.1" %}
+{% set version = "1.20.2" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,7 +9,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/future.apply_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/future.apply/future.apply_{{ version }}.tar.gz
-  sha256: 10855b037ba1b9f5723d6168ce5b26b550b017ff4a11724c7151a4c110f66628
+  sha256: 30d6b64c93a1c40fc1b07e21503fce811707fc30589145832ce0b8947ce74bdf
 
 build:
   number: 0
@@ -38,8 +38,8 @@ test:
 about:
   home: https://github.com/HenrikBengtsson/future.apply
   license: GPL-2.0-or-later
-  summary: Implementations of apply(), eapply(), lapply(), Map(), mapply(), replicate(), sapply(), tapply(), and vapply() that can be resolved using any future-supported backend, e.g. parallel on the local machine or distributed on a compute cluster.  These future_*apply() functions come with the same pros and cons as the
-    corresponding base-R *apply() functions but with the additional feature of being able to be processed via the future framework.
+  summary: Implementations of apply(), eapply(), lapply(), Map(), mapply(), replicate(), sapply(), tapply(), and vapply() that can be resolved using any future-supported backend, e.g. parallel on the local machine or distributed on a compute cluster.  These future_*apply() functions come with the same pros and cons as 
+    the corresponding base-R *apply() functions but with the additional feature of being able to be processed via the future framework.
   license_family: GPL3
   license_file:
     - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
